@@ -1,0 +1,8 @@
+"""
+    Created by Sayem on 12 October, 2019
+"""
+
+__author__ = "sayem"
+
+BROKER_URL = 'django://'
+CELERY_TIMEZONE = 'Asia/Dhaka'

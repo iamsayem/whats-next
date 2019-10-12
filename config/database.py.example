@@ -1,0 +1,16 @@
+"""
+    Created by Sayem on 12 October, 2019
+"""
+
+__author__ = "sayem"
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wnext',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
