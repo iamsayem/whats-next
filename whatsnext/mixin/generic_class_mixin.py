@@ -52,9 +52,9 @@ class TokenAuthenticationMixin(TokenAuthentication):
         return _token.user, _token.key
 
 
-class DomainEntityModelManager(Manager):
+class RootEntityModelManager(Manager):
     def get_queryset(self):
-        _queryset = super(DomainEntityModelManager, self).get_queryset()
+        _queryset = super(RootEntityModelManager, self).get_queryset()
         return _queryset.filter(is_active=True, is_deleted=False)
 
 
