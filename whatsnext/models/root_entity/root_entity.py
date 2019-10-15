@@ -54,7 +54,6 @@ class ConsoleUser(RootEntity):
     user = models.OneToOneField("auth.User", default=None, null=True, blank=True, on_delete=models.CASCADE)
     phone = models.CharField(max_length=20, default=None, null=True, blank=True)
     date_of_birth = models.DateField(default=None, null=True, blank=True)
-    last_donated_on = models.BigIntegerField(default=0)
 
     class Meta:
         app_label = "whatsnext"
