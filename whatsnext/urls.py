@@ -38,5 +38,5 @@ urlpatterns += [
         regex=r'^api/register/$',
         view=RegistrationAPIView.as_view({'get': 'list', 'post': 'create'}),
         name="Registration"
-    )
+    ),
 ]

@@ -4,4 +4,7 @@
 
 __author__ = "sayem"
 
-INSTALLED_APPS = ["whatsnext"]
+INSTALLED_APPS = [
+    "whatsnext",
+    # "suit"
+]
