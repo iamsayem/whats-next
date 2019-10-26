@@ -10,6 +10,9 @@ DATABASES = {
         'NAME': 'sayem$whatsnext',
         'USER': 'sayem',
         'PASSWORD': 'f0d66322',
-        'HOST': 'sayem.mysql.pythonanywhere-services.com'
+        'HOST': 'sayem.mysql.pythonanywhere-services.com',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
+        }
     }
 }
