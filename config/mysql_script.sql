@@ -1,0 +1,9 @@
+DROP DATABASE IF EXISTS whatsnext;
+CREATE DATABASE whatsnext
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+
+USE mysql;
+GRANT ALL PRIVILEGES ON whatsnext.* TO 'mysql'@'localhost' IDENTIFIED BY 'mysql'
+    WITH GRANT OPTION;
+FLUSH PRIVILEGES;

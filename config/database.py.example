@@ -6,11 +6,11 @@ __author__ = "sayem"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'wnext',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'whatsnext',
+        'USER': 'mysql',
+        'PASSWORD': 'mysql',
         'HOST': 'localhost',
-        'PORT': '5432',
+        'PORT': '3306'
     }
 }
