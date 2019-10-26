@@ -8,9 +8,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'whatsnext',
-        'USER': 'mysql',
-        'PASSWORD': 'mysql',
-        'HOST': 'localhost',
+        'USER': 'sayem',
+        'PASSWORD': 'f0d66322',
+        'HOST': 'sayem.mysql.pythonanywhere-services.com',
         'PORT': '3306'
     }
 }
