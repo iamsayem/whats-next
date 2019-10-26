@@ -10,7 +10,6 @@ DATABASES = {
         'NAME': 'sayem@whatsnext',
         'USER': 'sayem',
         'PASSWORD': 'f0d66322',
-        'HOST': 'sayem.mysql.pythonanywhere-services.com',
-        'PORT': '3306'
+        'HOST': 'sayem.mysql.pythonanywhere-services.com'
     }
 }
