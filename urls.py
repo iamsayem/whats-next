@@ -16,6 +16,9 @@ Including another URLconf
 import importlib
 
 from django.conf import settings
+from django.conf.urls import url
+from django.conf.urls.i18n import i18n_patterns
+from django.views.static import serve
 
 urlpatterns = list()
 INSTALLED_APPS = settings.PROJECT_APPS
@@ -32,3 +35,13 @@ for _app in INSTALLED_APPS:
 # urlpatterns += static(settings.STATIC_UPLOAD_URL, document_root=settings.STATIC_UPLOAD_ROOT)
 
 # ------------------------- upload directory shortcut url --------------------------------------------
+
+# static file urls
+urlpatterns += i18n_patterns(
+    url(r'^static/' + '(.*)$', serve, {
+        'document_root': settings.STATIC_ROOT,
+    }),
+    url(r'^static-media/' + '(.*)$', serve, {
+        'document_root': settings.STATIC_ROOT,
+    }),
+)
