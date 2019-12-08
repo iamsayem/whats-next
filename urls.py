@@ -19,6 +19,10 @@ from django.conf import settings
 from django.conf.urls import url
 from django.conf.urls.i18n import i18n_patterns
 from django.views.static import serve
+from rest_framework.routers import SimpleRouter
+
+from enginecore.decorators import get_models_with_decorator
+from enginecore.mixin import GenericApiViewSetMixin
 
 urlpatterns = list()
 INSTALLED_APPS = settings.PROJECT_APPS
@@ -30,6 +34,32 @@ for _app in INSTALLED_APPS:
         urlpatterns += _app_urls
     except ImportError as exp:
         pass
+
+INSTALLED_APPS = settings.PROJECT_APPS
+
+router = SimpleRouter()
+all_models = get_models_with_decorator('expose_api', INSTALLED_APPS, include_class=True)
+for _model in all_models:
+    viewset_subclass = type(
+        'RunTime_' + _model.__name__ + '_ViewSet',
+        (GenericApiViewSetMixin,),
+        dict(
+            model=_model,
+            serializer_class=_model.get_serializer())
+    )
+    router.register(prefix=r'api/' + _model._url_prefix, viewset=viewset_subclass, base_name=_model.__name__)
+
+    _view_cls = getattr(
+        importlib.import_module(_model._meta.app_label + ".views", _model._registry.get("api_view")),
+        _model._registry.get("api_view")
+    )
+    urlpatterns.append(
+        url(
+            regex=r'^api/' + _model._registry.get("api_url_postfix") + "/$",
+            view=_view_cls.as_view({'get': 'list', 'post': 'create'}),
+            name=_model.__name__
+        )
+    )
 # ------------------------- general routes end -----------------------------------------
 
 # urlpatterns += static(settings.STATIC_UPLOAD_URL, document_root=settings.STATIC_UPLOAD_ROOT)

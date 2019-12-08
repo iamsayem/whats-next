@@ -63,7 +63,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, 'whatsnext/templates'),
+            os.path.join(BASE_DIR, 'whatsnext/enginecore/templates'),
         ]
         ,
         'APP_DIRS': True,

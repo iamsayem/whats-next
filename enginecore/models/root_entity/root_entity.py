@@ -1,9 +1,12 @@
 """
     Created by Sayem on 15 October, 2019
 """
-from whatsnext.mixin.generic_class_mixin import CodedModelMixin, Clock, Model2DictMixin, RootEntityModelManager
 from django.db import models, transaction
 from django.db.models import Manager
+
+from ...manager import *
+from ...mixin import *
+from ...utils import *
 
 __author__ = "sayem"
 
@@ -13,7 +16,7 @@ class MaxSequence(models.Model):
     value = models.BigIntegerField(default=1)
 
     class Meta:
-        app_label = "whatsnext"
+        app_label = "enginecore"
 
 
 class RootEntity(models.Model, Model2DictMixin, CodedModelMixin):
@@ -28,7 +31,7 @@ class RootEntity(models.Model, Model2DictMixin, CodedModelMixin):
     all_objects = Manager()
 
     class Meta:
-        app_label = "whatsnext"
+        app_label = "enginecore"
 
     def save(self, *args, **kwargs):
         with transaction.atomic():
@@ -56,7 +59,7 @@ class ConsoleUser(RootEntity):
     date_of_birth = models.DateField(default=None, null=True, blank=True)
 
     class Meta:
-        app_label = "whatsnext"
+        app_label = "enginecore"
 
 
 class SessionKey(RootEntity):
@@ -64,4 +67,4 @@ class SessionKey(RootEntity):
     user = models.ForeignKey(ConsoleUser, default=None, on_delete=models.CASCADE)
 
     class Meta:
-        app_label = "whatsnext"
+        app_label = "enginecore"
