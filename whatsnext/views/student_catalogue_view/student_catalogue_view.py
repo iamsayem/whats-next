@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView
 
-from whatsnext.models import ConsoleUser
+from ...models import ConsoleUser
 
 __author__ = "sayem"
 

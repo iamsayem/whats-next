@@ -2,12 +2,12 @@
     Created by Sayem on 15 October, 2019
 """
 from django.contrib.auth.models import User
-from generic_mixin_utils.mixin.generic_class_mixin import Clock
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
+from enginecore.utils import Clock
 from whatsnext.models import ConsoleUser
 
 __author__ = "sayem"
