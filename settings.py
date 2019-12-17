@@ -62,10 +62,7 @@ ROOT_URLCONF = 'urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            os.path.join(BASE_DIR, 'whatsnext/enginecore/templates'),
-        ]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, template_dir) for template_dir in TEMPLATE_DIRS],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

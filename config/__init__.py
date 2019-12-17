@@ -7,11 +7,13 @@ from .apps import INSTALLED_APPS as PROJECT_APPS
 from .celery_config import *
 from .database import *
 from .suit_config import *
+from .template_config import *
 
 __all__ = [
     "PROJECT_APPS",
     "DATABASES",
     "BROKER_URL",
     "CELERY_TIMEZONE",
-    "SUIT_CONFIG"
+    "SUIT_CONFIG",
+    "TEMPLATE_DIRS"
 ]
