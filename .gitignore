@@ -63,7 +63,7 @@ target/
 .idea
 *.iml
 p-win
-static_media
+/static/
 captured_images
 temp-export-files
 *.txt~
