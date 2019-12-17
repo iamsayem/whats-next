@@ -72,7 +72,6 @@ temp-export-files
 /celerybeat-schedule
 *.db
 *.json
-static/model_data/
 config/database.py
 config/dbbackup_restore_config.py
 config/celery_config.py
