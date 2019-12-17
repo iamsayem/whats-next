@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -8,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../static/plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ STATIC_URL }}plugins/images/favicon.png">
     <title>Pixel Admin - Responsive Admin Dashboard Template built with Twitter Bootstrap</title>
     <!-- Bootstrap Core CSS -->
     <link href="{{ STATIC_URL }}bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
