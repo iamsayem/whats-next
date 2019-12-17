@@ -5,6 +5,7 @@
 __author__ = "sayem"
 
 INSTALLED_APPS = [
+    "enginecore",
     "whatsnext",
     # "suit"
 ]

@@ -77,4 +77,4 @@ config/database.py
 config/dbbackup_restore_config.py
 config/celery_config.py
 config/email_config.py
-whatsnext/migrations/
+migrations

@@ -7,7 +7,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from whatsnext.mixin.generic_class_mixin import Clock
+from enginecore.utils import Clock
 from whatsnext.models import ConsoleUser
 
 __author__ = "sayem"
