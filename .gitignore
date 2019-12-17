@@ -63,7 +63,7 @@ target/
 .idea
 *.iml
 p-win
-/static/
+{{ STATIC_URL }}
 captured_images
 temp-export-files
 *.txt~
