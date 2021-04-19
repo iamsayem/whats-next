@@ -48,9 +48,7 @@ class GenericApiViewSetMixin(viewsets.ModelViewSet):
         # log = ApiCallLog.log(request=request, tsync_id=_log_tsync_id)
         # if log:
         #     self._log_tsync_id = log.tsync_id
-        return super(GenericApiViewSetMixin, self).create(
-            request=request, *args, **kwargs
-        )
+        return super(GenericApiViewSetMixin, self).create(request=request, *args, **kwargs)
 
     def update(self, request, *args, partial=True, **kwargs):
         # _log_tsync_id = None
